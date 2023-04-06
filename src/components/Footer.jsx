@@ -61,12 +61,12 @@ export default function Footer() {
 
                         
                             <input 
-                            className="rounded-3xl outline-none border-none py-4 inline px-4 bg-white text-black"
+                            className="rounded-3xl outline-none border-none py-4 inline px-4 bg-white text-bright-red"
                             type="email"
                             placeholder="Updates in your inbox"
                             />
 
-                            <button className="btn-primary">Go</button>
+                            <button className="btn-primary  ">Go</button>
                         
 
                     </form>

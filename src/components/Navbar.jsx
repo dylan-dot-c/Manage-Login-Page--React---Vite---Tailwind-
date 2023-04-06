@@ -21,6 +21,19 @@ export default function Navbar() {
             <button className="bg-bright-red px-4 py-3 text-white rounded-3xl baseline hidden md:block hover:opacity-50 hover:drop-shadow-lg">
                 Get Started
             </button>
+
+            {/* Hamburgurer menu */}
+
+            <img src="/images/icon-hamburger.svg" alt=""
+                className="md:hidden block"
+            />
+
+            <div className="mobile-navbar">
+                
+                    {links}
+                
+            </div>
+
         </nav>
     )
 }

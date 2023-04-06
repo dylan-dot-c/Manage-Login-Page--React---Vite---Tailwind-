@@ -1,35 +1,6 @@
+import { useState } from "react"
 
-
-import "../slick.css"
-import "../slick-theme.css"
-
-import Slider from "react-slick";
-
-function SimpleSlider(props){
-    const slidesVisible = window.height > 768 ? 3 : 1;
-
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      draggable: true,
-      dotClass: "bg-purple-400 border-black text-red",
-      
-    }
-
-    return (
-      <div className="w-full p-4">
-      
-        <Slider {...settings}>
-          {props.elements}
-        </Slider>
-      </div>
-    );
-  }
-
-
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 export default function Testimonials() {
     const info = [
@@ -55,13 +26,19 @@ export default function Testimonials() {
         }
     ]
 
+    const [width, setWidth] = useState(0)
+
+
+
     let elements = info.map( (info, index) => {
         return (
-            <div className="bg-light-grey rounded text-black px-4 py-2 mt-12 h-[250px]" key={index}>
-                <img src={info.url} alt="Profile Pic" class="rounded-full w-24 -translate-y-12 mx-auto" />
-                <h4 className="font-bold mb-4">{info.name}</h4>
-                <p>{info.content}</p>
-            </div>
+            <SplideSlide>
+                <div className="bg-light-grey rounded text-black px-4 py-2 mt-12 h-[250px]" key={index}>
+                    <img src={info.url} alt="Profile Pic" class="rounded-full w-24 -translate-y-12 mx-auto" />
+                    <h4 className="font-bold mb-4">{info.name}</h4>
+                    <p>{info.content}</p>
+                </div>
+            </SplideSlide>
         )
     })
 
@@ -69,9 +46,23 @@ export default function Testimonials() {
         <section className="w-full">
             <h2>What They've Said</h2>
 
+            
             <section className="text-center">
-                <SimpleSlider elements={elements} />
+            <Splide aria-label="My Favorite Images"
 
+                options={ {
+                    rewind: true,
+                    type: 'loop',
+                    padding: '3rem',
+                    perPage: window.innerHeight < 750 ? 1 : 3,
+                    gap   : '1rem',
+                    arrows: false,
+                  } }
+            >
+
+
+                {elements}
+            </Splide>
                 <button className="btn-primary mx-auto mt-12">Get Started</button>
             </section>
         </section>

@@ -8,6 +8,19 @@
   * {
     font-family: 'Be Vietnam Pro', sans-serif;
     box-sizing: border-box;
+    
+  }
+
+  .splide__pagination__page {
+    border: 3px solid black!important;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-image: url(/public/images/bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-position: 90% -350px;
+    background-size: 800px;
   }
 
 
@@ -21,5 +34,21 @@
   p {
     font-size: 16px;
     @apply text-greyish-blue;
+  }
+
+  .mobile-navbar {
+    @apply bg-white shadow-lg font-bold absolute top-16 w-full flex flex-col space-y-6 left-0 p-4 text-center md:hidden block;
+  }
+
+  .mobile-navbar ul li {
+    @apply block my-4;
+  }
+
+  .cta {
+    background-image: url(/images/bg-simplify-section-desktop.svg);
+    background-repeat: no-repeat;
+    @apply w-full bg-bright-red mt-20;
+    /*  */
+
   }
 }
