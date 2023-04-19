@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
@@ -42,6 +42,14 @@ export default function Testimonials() {
         )
     })
 
+    useEffect(() => {
+
+        let width = window.innerWidth;
+        console.log(width)
+        setWidth(width)
+
+    }, [])
+
     return (
         <section className="w-full">
             <h2>What They've Said</h2>
@@ -54,7 +62,7 @@ export default function Testimonials() {
                     rewind: true,
                     type: 'loop',
                     padding: '3rem',
-                    perPage: window.innerHeight < 750 ? 1 : 3,
+                    perPage: (width < 500) ? 1 : 3,
                     gap   : '1rem',
                     arrows: false,
                   } }
