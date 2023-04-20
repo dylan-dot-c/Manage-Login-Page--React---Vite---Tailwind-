@@ -48,17 +48,17 @@ export default function Footer() {
 
                 </div>
 
-                <div className="flex px-4 justify-between order-3 ">
-                <div className="order-2">
-                    <ul className="space-y-6">
-                        {res}
-                    </ul>
-                </div>
-                <div className="order-3">
-                    <ul className="space-y-6">
-                        {res2}
-                    </ul>
-                </div>
+                <div className="flex px-4 justify-between order-3 gap-12 w-1/4 ">
+                    <div className="order-2">
+                        <ul className="space-y-6">
+                            {res}
+                        </ul>
+                    </div>
+                    <div className="order-3">
+                        <ul className="space-y-6">
+                            {res2}
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="flex justify-between flex-col order-0">
