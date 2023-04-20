@@ -33,10 +33,12 @@ export default function Testimonials() {
     let elements = info.map( (info, index) => {
         return (
             <SplideSlide>
-                <div className="bg-light-grey rounded text-black px-4 py-2 mt-12 h-[250px]" key={index}>
+                <div className="bg-light-grey rounded text-black px-8 md:px-4 py-2 mt-12 h-[250px]" key={index}>
                     <img src={info.url} alt="Profile Pic" class="rounded-full w-24 -translate-y-12 mx-auto" />
-                    <h4 className="font-bold mb-4">{info.name}</h4>
-                    <p>{info.content}</p>
+                    <div className="-mt-6">
+                        <h4 className="font-bold mb-4">{info.name}</h4>
+                        <p className="text-sm">{info.content}</p>
+                    </div>
                 </div>
             </SplideSlide>
         )
@@ -59,8 +61,8 @@ export default function Testimonials() {
             <Splide aria-label="My Favorite Images"
 
                 options={ {
-                    rewind: true,
-                    type: 'loop',
+                    rewind: false,
+                    // type: 'loop',
                     padding: '3rem',
                     perPage: (width < 500) ? 1 : 3,
                     gap   : '1rem',

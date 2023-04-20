@@ -1,7 +1,8 @@
-
+import { useState, useEffect } from "react"
 
 export default function Navbar() {
 
+    const [navOpen, setNavOpen] = useState(false)
     const navLinks = ['Pricing', 'Product', 'About Us', 'Careers', 'Community']
 
     const links = navLinks.map( (link, index) => {
@@ -11,6 +12,20 @@ export default function Navbar() {
             </li>
         )
     })
+
+    useEffect( () => {
+        
+        if(navOpen) {
+            document.body.style.overflow = "hidden"
+        }else {
+            document.body.style.overflow = "unset"
+        }
+
+    }, [navOpen])
+
+    const openNav = function() {
+        setNavOpen(!navOpen)
+    }
 
     return (
         <nav className="container mx-auto flex justify-between items-center  p-8">
@@ -24,11 +39,26 @@ export default function Navbar() {
 
             {/* Hamburgurer menu */}
 
-            <img src="/images/icon-hamburger.svg" alt=""
-                className="md:hidden block"
-            />
+            {
 
-            <div className="mobile-navbar">
+
+                navOpen ?
+
+                <img src="/images/icon-close.svg" alt=""
+                onClick={openNav}
+                className="md:hidden block"/>
+                
+                    :
+                <img src="/images/icon-hamburger.svg" alt=""
+                onClick={openNav}
+                className="md:hidden block"/>
+                
+        
+        }
+
+
+
+            <div className={`mobile-navbar ${navOpen ? "flex": "hidden"}`}>
                 
                     {links}
                 
