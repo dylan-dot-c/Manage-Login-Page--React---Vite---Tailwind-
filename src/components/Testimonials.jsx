@@ -65,7 +65,7 @@ export default function Testimonials() {
                     // type: 'loop',
                     padding: '3rem',
                     perPage: (width < 500) ? 1 : 3,
-                    gap   : '1rem',
+                    gap   : '3rem',
                     arrows: false,
                   } }
             >

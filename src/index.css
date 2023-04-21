@@ -19,7 +19,7 @@
     overflow-x: hidden;
     background-image: url(/public/images/bg-tablet-pattern.svg);
     background-repeat: no-repeat;
-    background-position: 90% -350px;
+    background-position: 70% -350px;
     background-size: 800px;
   }
 
@@ -32,7 +32,7 @@
   }
 
   .fa-brands {
-    @apply hover:text-bright-red transition my-3 text-4xl ;
+    @apply hover:text-bright-red transition my-3 text-4xl md:text-3xl hover:cursor-pointer;
   }
   p {
     font-size: 16px;

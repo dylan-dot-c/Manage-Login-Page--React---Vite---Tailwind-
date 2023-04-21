@@ -1,4 +1,4 @@
-import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
+// import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
 
 function links(list) {
     const res = list.map( (link, index) => {
@@ -17,12 +17,12 @@ function links(list) {
 
 export default function Footer() {
 
-    const images = [<i className="fa-brands fa-facebook"></i>, <i class="fa-brands fa-instagram"></i>,<i class="fa-brands fa-twitter"></i>, <i class="fa-brands fa-pinterest"></i>, <i class="fa-brands fa-instagram"></i>]
+    const icons = [<i className="fa-brands fa-facebook"></i>, <i class="fa-brands fa-instagram"></i>,<i class="fa-brands fa-twitter"></i>, <i class="fa-brands fa-pinterest"></i>, <i class="fa-brands fa-instagram"></i>]
 
-    const socialIcons = images.map( (image, index) => {
+    const socialIcons = icons.map( (image, index) => {
 
         return (
-            <span>
+            <span key={index}>
                 {image}
 
             </span>            
@@ -38,8 +38,9 @@ export default function Footer() {
     return (
         <footer className="bg-very-dark-blue text-white py-12 px-6">
             <div className="container mx-auto flex justify-between flex-col md:flex-row gap-6">
-                <div className="flex flex-col justify-between order-5 w-full md:w-auto">
-                    <img src="/images/logo-white.svg" alt="Manage Logo" className="order-4 mx-auto mt-4" width="200px" />
+
+                <div className="flex flex-col justify-between order-5 w-full md:w-auto md:-order-1">
+                    <img src="/images/logo-white.svg" alt="Manage Logo" className="order-4 mx-auto mt-4 md:order-1 md:mx-0" width="150px" />
 
                     <div className="flex space-x-6 order-1 justify-between px-4">
                         {socialIcons}
@@ -48,26 +49,26 @@ export default function Footer() {
 
                 </div>
 
-                <div className="flex px-4 justify-between order-3 gap-12 w-1/4 ">
-                    <div className="order-2">
+                <div className="flex px-4 justify-between order-3  w-full md:w-1/4 md:order-1 ">
+                    <div className="">
                         <ul className="space-y-6">
                             {res}
                         </ul>
                     </div>
-                    <div className="order-3">
+                    <div className="">
                         <ul className="space-y-6">
                             {res2}
                         </ul>
                     </div>
                 </div>
 
-                <div className="flex justify-between flex-col order-0">
+                <div className="flex justify-between flex-col order-0 md:order-5">
 
-                    <form action="" className="flex gap-4 order-9 justify-between">
+                    <form action="" className="flex gap-4 order-9 justify-between items-center">
 
                         
                             <input 
-                            className="outline-none border-none py-4 inline px-4 bg-white text-bright-red w-4/5 rounded-full"
+                            className="outline-none border-none py-2 inline px-4 bg-white text-bright-red w-4/5 rounded-full"
                             type="email"
                             placeholder="Updates in your inbox"
                             required={true}
