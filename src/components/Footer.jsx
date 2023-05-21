@@ -1,4 +1,4 @@
-// import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
 
 function links(list) {
     const res = list.map( (link, index) => {
